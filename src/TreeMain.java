@@ -2,31 +2,36 @@
 public class TreeMain {
 
 	public static void main(String[] args) {
-		Node root = new Node(10);
-		root.setRight(new Node(13));
-		root.setLeft(new Node(6));
-		
-		BinaryTree tree = new BinaryTree(root);
-		TreePrinter.printTree(tree);
-		
-		System.out.println();
-		System.out.println();
-		
+		// Create the tree.
+		BinaryTree tree = new BinaryTree(new Node(10));
+
+		// Insert values to the tree. For example:
+		tree.insert(14);
+		tree.insert(16);
 		tree.insert(22);
-		tree.insert(1);
+		tree.insert(2);
 		tree.insert(12);
 		tree.insert(6);
+		tree.insert(1);
 		tree.insert(12);
+		tree.insert(11);
+		tree.insert(14);
+		tree.insert(14);
+		tree.insert(14);
+		tree.insert(13);
 		tree.insert(10);
-		TreePrinter.printTree(tree);
-		
-		System.out.println();
-		System.out.println();
-		
-		tree.delete(10);
-		tree.delete(6);
-		tree.deleteAll(12);
-		TreePrinter.printTree(tree);
+
+		// Print the tree.
+		tree.print();
+
+		// Test here.
+		/*
+		 * Some tests.
+		 */
+
+		// Print the tree again.
+		tree.print();
+
 	}
 
 }

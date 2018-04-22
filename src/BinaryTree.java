@@ -62,7 +62,7 @@ public class BinaryTree {
 		} else {
 			if (current.getAmount() > 1) {
 				current.setAmount(current.getAmount() - 1);
-			} else  if (current.getLeft() == null || current.getRight() == null) {
+			} else if (current.getLeft() == null || current.getRight() == null) {
 				Node temp = null;
 				temp = current.getLeft() == null ? current.getRight() : current.getLeft();
 
@@ -81,11 +81,11 @@ public class BinaryTree {
 		}
 		return current;
 	}
-	
+
 	public void deleteAll(int value) {
 		this.root = deleteAll(value, this.root);
 	}
-	
+
 	private Node deleteAll(int value, Node current) {
 		if (current == null) {
 			throw new NoSuchElementException("Value not found in the binary tree.");
@@ -106,6 +106,7 @@ public class BinaryTree {
 			} else {
 				Node successor = this.getSuccessor(current);
 				current.setValue(successor.getValue());
+				current.setAmount(successor.getAmount());
 				current.setRight(this.deleteAll(successor.getValue(), current.getRight()));
 				return current;
 			}
@@ -115,11 +116,16 @@ public class BinaryTree {
 
 	private Node getSuccessor(Node node) {
 		Node temp = node.getRight();
-		
+
 		while (temp.getLeft() != null) {
 			temp = temp.getLeft();
 		}
-		
+
 		return temp;
+	}
+
+	public void print() {
+		TreePrinter.print(this.root);
+		System.out.println("\n" + "\n");
 	}
 }

@@ -4,15 +4,11 @@ import java.util.List;
 /**
  * This class is used to print the binary tree. Retrieved from
  * {@link https://es.stackoverflow.com/questions/80381/imprimir-%C3%A1rbol-binario-en-su-forma-de-%C3%A1rbol}
- * @
+ * 
  * @author edmobe
  *
  */
 public class TreePrinter {
-
-	public static void printTree(BinaryTree tree) {
-		TreePrinter.print(tree.getRoot());
-	}
 
 	public static void print(Node root) {
 		List<List<String>> lines = new ArrayList<List<String>>();

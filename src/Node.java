@@ -4,14 +4,14 @@ public class Node {
 	private int amount;
 	private Node left;
 	private Node right;
-	
+
 	public Node(int value) {
 		this.value = value;
 		this.amount = 1;
 		right = null;
 		left = null;
 	}
-	
+
 	public int getValue() {
 		return this.value;
 	}
@@ -43,11 +43,11 @@ public class Node {
 	public void setRight(Node right) {
 		this.right = right;
 	}
-	
+
 	@Override
 	public String toString() {
 		return String.valueOf(this.value) + "(" + this.amount + ")";
-		
+
 	}
-	
+
 }
