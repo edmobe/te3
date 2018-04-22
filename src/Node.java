@@ -1,17 +1,27 @@
 
 public class Node {
 	private int value;
+	private int amount;
 	private Node left;
 	private Node right;
 	
 	public Node(int value) {
 		this.value = value;
+		this.amount = 1;
 		right = null;
 		left = null;
 	}
 	
 	public int getValue() {
 		return this.value;
+	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
 	}
 
 	public Node getLeft() {
@@ -36,7 +46,7 @@ public class Node {
 	
 	@Override
 	public String toString() {
-		return String.valueOf(this.value);
+		return String.valueOf(this.value) + "(" + this.amount + ")";
 		
 	}
 	
