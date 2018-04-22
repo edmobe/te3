@@ -1,5 +1,13 @@
 import java.util.NoSuchElementException;
 
+/**
+ * Binary tree of integers.
+ * 
+ * @author Eduardo
+ * @author Alex
+ * @author Josué
+ *
+ */
 public class BinaryTree {
 	private Node root;
 
@@ -15,6 +23,13 @@ public class BinaryTree {
 		this.root = root;
 	}
 
+	/**
+	 * Returns true if the entered value is in the tree.
+	 * 
+	 * @param value
+	 *            entered integer.
+	 * @return true or false.
+	 */
 	public boolean contains(int value) {
 		return this.contains(value, this.root);
 	}
@@ -31,6 +46,12 @@ public class BinaryTree {
 		}
 	}
 
+	/**
+	 * Adds a node with the given value to the binary tree.
+	 * 
+	 * @param value
+	 *            given integer.
+	 */
 	public void insert(int value) {
 		this.root = this.insert(value, this.root);
 	}
@@ -48,6 +69,13 @@ public class BinaryTree {
 		return current;
 	}
 
+	/**
+	 * Deletes one of the given values. If the value has only been added once,
+	 * deletes the node with that value.
+	 * 
+	 * @param value
+	 *            given integer.
+	 */
 	public void delete(int value) {
 		this.root = this.delete(value, this.root);
 	}
@@ -82,6 +110,12 @@ public class BinaryTree {
 		return current;
 	}
 
+	/**
+	 * Deletes the node with the given value.
+	 * 
+	 * @param value
+	 *            given integer.
+	 */
 	public void deleteAll(int value) {
 		this.root = deleteAll(value, this.root);
 	}
@@ -114,6 +148,14 @@ public class BinaryTree {
 		return current;
 	}
 
+	/**
+	 * Returns the successor of a node that has to be deleted and has left and right
+	 * nodes.
+	 * 
+	 * @param node
+	 *            node to be deleted.
+	 * @return the successor.
+	 */
 	private Node getSuccessor(Node node) {
 		Node temp = node.getRight();
 
@@ -124,8 +166,58 @@ public class BinaryTree {
 		return temp;
 	}
 
+	/**
+	 * Prints the binary tree.
+	 */
 	public void print() {
 		TreePrinter.print(this.root);
 		System.out.println("\n" + "\n");
+	}
+
+	/**
+	 * Finds the node with the minimum value.
+	 * 
+	 * @return node with the minimum value.
+	 */
+	public Node findMin() {
+		return findMin(this.root);
+	}
+
+	private Node findMin(Node current) {
+		if (current == null) {
+			return null;
+		} else if (current.getLeft() == null) {
+			return current;
+		} else {
+			return findMin(current.getLeft());
+		}
+	}
+
+	/**
+	 * Finds the node with the maximum value.
+	 * 
+	 * @return node with the maximum value.
+	 */
+	public Node findMax() {
+		return findMax(this.root);
+	}
+
+	private Node findMax(Node current) {
+		if (current == null) {
+			return null;
+		} else if (current.getRight() == null) {
+			return current;
+		} else {
+			return findMax(current.getRight());
+		}
+	}
+
+	/**
+	 * Gives the difference between the maximum and minimum values in the tree.
+	 * 
+	 * @return an integer.
+	 */
+	public int dif() {
+		return findMax().getValue() - findMin().getValue();
 	}
 }

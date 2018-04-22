@@ -1,4 +1,10 @@
 
+/**
+ * Main class for tests.
+ * 
+ * @author Eduardo
+ *
+ */
 public class TreeMain {
 
 	public static void main(String[] args) {
@@ -26,11 +32,14 @@ public class TreeMain {
 
 		// Test here.
 		/*
-		 * Some tests.
+		 * Methods for (1) are insert(), delete(), deleteAll().
+		 * Method for (2) is dif().
+		 * Method for (3) is ...
+		 * Method for (4) is ...
 		 */
 
-		// Print the tree again.
-		tree.print();
+		// Print the tree again if needed.
+		// tree.print();
 
 	}
 

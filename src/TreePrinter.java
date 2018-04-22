@@ -5,7 +5,7 @@ import java.util.List;
  * This class is used to print the binary tree. Retrieved from
  * {@link https://es.stackoverflow.com/questions/80381/imprimir-%C3%A1rbol-binario-en-su-forma-de-%C3%A1rbol}
  * 
- * @author edmobe
+ * @author Eduardo
  *
  */
 public class TreePrinter {

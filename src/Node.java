@@ -1,4 +1,9 @@
-
+/**
+ * Node class for the binary tree.
+ * 
+ * @author Eduardo
+ *
+ */
 public class Node {
 	private int value;
 	private int amount;
@@ -44,6 +49,10 @@ public class Node {
 		this.right = right;
 	}
 
+	/**
+	 * Returns the value of the node and the amount of times it was added to the
+	 * tree.
+	 */
 	@Override
 	public String toString() {
 		return String.valueOf(this.value) + "(" + this.amount + ")";
