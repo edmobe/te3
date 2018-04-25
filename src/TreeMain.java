@@ -26,6 +26,13 @@ public class TreeMain {
 		tree.insert(14);
 		tree.insert(13);
 		tree.insert(10);
+		
+		System.out.println("Going through the binary tree of the form :\nPreorder ");
+		tree.preorder();
+		System.out.println("\nInorder");
+		tree.inorder();
+		System.out.println("\nPostorder");
+		tree.postorder();
 
 		// Print the tree.
 		tree.print();
